@@ -206,7 +206,7 @@ if(IS_MSVC)
                         GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
             DESTINATION "/")
 else()
-    install(CODE "FILE(MAKE_DIRECTORY \${CMAKE_INSTALL_PREFIX}/lib/colmap)")
+    install(CODE "FILE(MAKE_DIRECTORY \$ENV{DESTDIR}\${CMAKE_INSTALL_PREFIX}/lib/colmap)")
     install(FILES "scripts/shell/colmap.sh"
             PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
                         GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
